@@ -25,3 +25,11 @@ if __name__ == '__main__':
     runner = HTMLTestRunner(stream=fp, title="自动化测试报告", description='测试用例执行情况',verbosity=2)
     runner.run(run_case())
     fp.close()
+	#对测试报告结果进行判断，测试未通过返回1，测试通过返回0
+    with open(htmlreport, 'r', encoding='UTF-8') as f:
+        if "错误</a></span>" in  str(f.read()):
+            print('有测试未通过case')
+            exit(1)
+        else:
+            print('测试case全部通过')
+            exit(0)

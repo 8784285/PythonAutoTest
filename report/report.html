@@ -247,9 +247,9 @@ function close_shots(obj) {
 </div>
 <div class='heading'>
 <h1>自动化测试报告</h1>
-<p class='attribute'><strong>开始时间:</strong> 2020-08-07 09:46:06</p>
-<p class='attribute'><strong>耗时:</strong> 0:00:00.267306</p>
-<p class='attribute'><strong>状态:</strong> <span class="tj passCase">Pass</span>9</p>
+<p class='attribute'><strong>开始时间:</strong> 2020-08-08 15:06:05</p>
+<p class='attribute'><strong>耗时:</strong> 0:00:00.293005</p>
+<p class='attribute'><strong>状态:</strong> <span class="tj passCase">Pass</span>8 <span class="tj errorCase">Error</span>1</p>
 
 <p class='description'>测试用例执行情况</p>
 </div>
@@ -408,36 +408,42 @@ end testing....
     <td></td>
 </tr>
 
-<tr class='passClass'>
+<tr class='errorClass'>
     <td>test_login.Test_Login</td>
     <td>5</td>
-    <td>5</td>
+    <td>4</td>
     <td>0</td>
-    <td>0</td>
+    <td>1</td>
     <td><a href="javascript:showClassDetail('c2',5)">详情</a></td>
     <td>&nbsp;</td>
 </tr>
 
-<tr id='pt2.1' class='hiddenRow'>
+<tr id='ft2.1' class='none'>
     <td ><div class='testcase'>test_login_1</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <span class='status passCase'>
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.1')" >
-        通过</a></span>
+    <span class='status errorCase'>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.1')" >
+        错误</a></span>
 
-    <div id='div_pt2.1' class="popup_window">
+    <div id='div_ft2.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.1').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-pt2.1: start test...
+ft2.1: start test...
 {'id': 'case_001', 'name': '有效用户登录', 'method': 'post', 'url': 'http://127.0.0.1:5000/login', 'params': '', 'headers': '', 'body': '{\n "username": "Mr.null",\n "password": "dc483e80a7a0bd9ef71d8cf973673924"\n}', 'status_code': 200.0, 'expect_result': '"code": 4', 'msg': ''}
 expect_result1  4
 end testing....
+Traceback (most recent call last):
+  File "C:\Python36\lib\site-packages\ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "E:\project\PythonAutoTest\testcase\test_login.py", line 30, in test_login
+    self.assertEqual(resp.json()["code"], expect_result, "返回错误,实际结果是%s"%resp.json()["code"])
+KeyError: 'code'
 
 
         </pre>
@@ -571,15 +577,15 @@ end testing....
 <tr id='total_row'>
     <td>统计</td>
     <td>9</td>
-    <td>9</td>
+    <td>8</td>
     <td>0</td>
-    <td>0</td>
+    <td>1</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
 </tr>
 </table>
 <script>
-    drawCircle(9, 0, 0)
+    drawCircle(8, 0, 1)
 </script>
 
 <div id='ending'>&nbsp;</div>
